@@ -16,9 +16,9 @@ type Storage struct {
 	collection *mongo.Collection
 }
 
-func New(uri string) (*Storage, error) {
+func New(url string) (*Storage, error) {
 	// Опции подключения
-	clientOptions := options.Client().ApplyURI(uri)
+	clientOptions := options.Client().ApplyURI(url)
 
 	// Создаём клиент MongoDB
 	client, err := mongo.Connect(context.Background(), clientOptions)
